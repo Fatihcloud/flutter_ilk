@@ -25,7 +25,7 @@ class YanMenu extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => FavoritePage()),
+                              builder: (context) => const FavoritePage()),
                         );
                       },
                       label: const Text('Favorite'),
