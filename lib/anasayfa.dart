@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:son_deneme/yanmenu.dart';
+import 'package:english_words/english_words.dart';
 
 class AnaSayfa extends StatefulWidget {
   const AnaSayfa({super.key});
@@ -18,7 +19,12 @@ class _AnaSayfaState extends State<AnaSayfa> {
           style: TextStyle(color: Colors.white, fontStyle: FontStyle.italic),
         ),
       ),
-      body: Container(),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: Card()
+        ),
+      ),
       drawer: const YanMenu(),
     );
   }
