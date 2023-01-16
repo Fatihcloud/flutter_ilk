@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:son_deneme/anasayfa.dart';
 
-void main() => runApp(AnaGiris());
+void main() => runApp(const AnaGiris());
 
 class AnaGiris extends StatelessWidget {
+  const AnaGiris({super.key});
+
   get favorites => null;
 
   get garbages => null;
@@ -11,8 +13,10 @@ class AnaGiris extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(primarySwatch: Colors.green),
-      home: AnaSayfa(),
+      theme: ThemeData(
+        primarySwatch: Colors.deepOrange,
+      ),
+      home: const AnaSayfa(),
       routes: rotalar,
       debugShowCheckedModeBanner: false,
     );
@@ -20,5 +24,5 @@ class AnaGiris extends StatelessWidget {
 }
 
 var rotalar = <String, WidgetBuilder>{
-  "/anasayfa": (BuildContext context) => AnaSayfa(),
+  "/anasayfa": (BuildContext context) => const AnaSayfa(),
 };

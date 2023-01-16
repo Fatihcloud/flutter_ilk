@@ -12,13 +12,14 @@ class _AnaSayfaState extends State<AnaSayfa> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-            title: Text(
-          'Random İngilizce',
-          style: TextStyle(color: Colors.black, fontStyle: FontStyle.italic),
-        )),
-        body: Container(),
-        drawer: YanMenu(),
-        backgroundColor: Colors.white);
+      appBar: AppBar(
+        title: const Text(
+          'RANDOM İNGİLİZCE',
+          style: TextStyle(color: Colors.white, fontStyle: FontStyle.italic),
+        ),
+      ),
+      body: Container(),
+      drawer: const YanMenu(),
+    );
   }
 }
