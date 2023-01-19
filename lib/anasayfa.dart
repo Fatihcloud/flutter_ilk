@@ -1,4 +1,3 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:son_deneme/yanmenu.dart';
 import 'package:english_words/english_words.dart';
@@ -34,6 +33,7 @@ class MyStatelessWidget extends StatelessWidget {
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
+        // ignore: prefer_const_literals_to_create_immutables
         children: [
           const RandomWordGenerator(),
         ],
@@ -44,18 +44,13 @@ class MyStatelessWidget extends StatelessWidget {
 
 class RandomWordGenerator extends StatefulWidget {
   const RandomWordGenerator({super.key});
-
   @override
   // ignore: library_private_types_in_public_api
   _RandomWordGeneratorState createState() => _RandomWordGeneratorState();
 }
 
 class _RandomWordGeneratorState extends State<RandomWordGenerator> {
-  // Random number generator
-  final _random = new Random();
-
-  // Variable to store the randomly selected word
-  String _selectedWord = "";
+  String _selectedWord = "Lütfen Next Tuşuna basınız";
 
   @override
   Widget build(BuildContext context) {
@@ -95,4 +90,3 @@ class _RandomWordGeneratorState extends State<RandomWordGenerator> {
     );
   }
 }
-
