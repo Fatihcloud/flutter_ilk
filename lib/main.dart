@@ -6,10 +6,6 @@ void main() => runApp(const AnaGiris());
 class AnaGiris extends StatelessWidget {
   const AnaGiris({super.key});
 
-  get favorites => null;
-
-  get garbages => null;
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
