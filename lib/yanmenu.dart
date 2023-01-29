@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:son_deneme/FavoritePage.dart';
-import 'package:son_deneme/Garbage_Page.dart';
+import 'FavoritePage.dart';
+import 'Garbage_Page.dart';
 
 class YanMenu extends StatelessWidget {
   const YanMenu({super.key});

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:son_deneme/anasayfa.dart';
+import 'anasayfa.dart';
 
 class FavoritePage extends StatefulWidget {
   const FavoritePage({super.key});
@@ -23,6 +23,7 @@ class _FavoritePageState extends State<FavoritePage> {
     );
   }
 }
+
 class FavoriListesi extends StatefulWidget {
   const FavoriListesi({super.key});
 
@@ -34,7 +35,6 @@ class _FavoriListesiState extends State<FavoriListesi> {
   @override
   Widget build(BuildContext context) {
     var appState = context.watch<MyAppState>();
-
     return Column(
       children: [
         Text('You have '
@@ -43,6 +43,7 @@ class _FavoriListesiState extends State<FavoriListesi> {
           child: ListView.builder(
             itemCount: appState.favorites.length,
             itemBuilder: (favorite, index) {
+
               return ListTile(
                 title: Text("${appState.favorites[index]}"),
                 leading: const Icon(Icons.favorite),

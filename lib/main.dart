@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:son_deneme/anasayfa.dart';
+import 'anasayfa.dart';
+
 
 void main() => runApp(const AnaGiris());
 
