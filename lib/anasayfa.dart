@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_ilk/yanmenu.dart';
-import 'package:english_words/english_words.dart';
+import 'provider/Yeni_kelime.dart';
 
 class AnaSayfa extends StatefulWidget {
   const AnaSayfa({super.key});
@@ -13,42 +13,16 @@ class AnaSayfa extends StatefulWidget {
 class _AnaSayfaState extends State<AnaSayfa> {
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider<MyAppState>(
-      create: (context) => MyAppState(),
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            'RANDOM İNGİLİZCE',
-            style: TextStyle(color: Colors.white, fontStyle: FontStyle.italic),
-          ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'RANDOM İNGİLİZCE',
+          style: TextStyle(color: Colors.white, fontStyle: FontStyle.italic),
         ),
-        body: const RandomWordGenerator(),
-        drawer: const YanMenu(),
       ),
+      body: const RandomWordGenerator(),
+      drawer: const YanMenu(),
     );
-  }
-}
-
-class MyAppState extends ChangeNotifier {
-  var current = WordPair.random();
-
-  void getNext() {
-    current = WordPair.random();
-    notifyListeners();
-  }
-
-  var favorites = <WordPair>[];
-  var garbages = <WordPair>[];
-
-  void toggleFavorite() {
-    if (favorites.contains(current)) {
-      favorites.remove(current);
-      print('baba');
-    } else {
-      favorites.add(current);
-      print('anne');
-    }
-    notifyListeners();
   }
 }
 
@@ -61,11 +35,11 @@ class RandomWordGenerator extends StatefulWidget {
 class _RandomWordGeneratorState extends State<RandomWordGenerator> {
   @override
   Widget build(BuildContext context) {
-    var appState = context.watch<MyAppState>();
     var theme = Theme.of(context);
-    var pair = appState.current;
+    final provider = Provider.of<MyAppState>(context);
+
     IconData icon;
-    if (appState.favorites.contains(pair)) {
+    if (provider.favorites.contains(provider.current)) {
       icon = Icons.favorite;
     } else {
       icon = Icons.favorite_border;
@@ -78,9 +52,7 @@ class _RandomWordGeneratorState extends State<RandomWordGenerator> {
             color: theme.colorScheme.primary,
             child: Padding(
                 padding: const EdgeInsets.all(10.0),
-                child: BigCard(
-                  pair: pair,
-                )),
+                child: Text(provider.current.asString)),
           ),
           const SizedBox(height: 10),
           Row(
@@ -88,8 +60,7 @@ class _RandomWordGeneratorState extends State<RandomWordGenerator> {
             children: [
               ElevatedButton.icon(
                 onPressed: () {
-                  appState.toggleFavorite();
-                  setState(() {});
+                  provider.toggleFavorite();
                 },
                 icon: Icon(icon),
                 label: const Text('Like'),
@@ -97,41 +68,13 @@ class _RandomWordGeneratorState extends State<RandomWordGenerator> {
               const SizedBox(width: 10),
               ElevatedButton(
                 onPressed: () {
-                  appState.getNext();
+                  provider.getNext();
                 },
                 child: const Text('Next'),
               ),
             ],
           )
         ],
-      ),
-    );
-  }
-}
-
-class BigCard extends StatelessWidget {
-  const BigCard({
-    Key? key,
-    required this.pair,
-  }) : super(key: key);
-
-  final WordPair pair;
-
-  @override
-  Widget build(BuildContext context) {
-    var theme = Theme.of(context);
-    var style = theme.textTheme.displayMedium!.copyWith(
-      color: theme.colorScheme.onPrimary,
-    );
-    return Card(
-      color: theme.colorScheme.primary,
-      child: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Text(
-          pair.asPascalCase,
-          style: style,
-          semanticsLabel: pair.asPascalCase,
-        ),
       ),
     );
   }

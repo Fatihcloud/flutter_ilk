@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ilk/provider/Yeni_kelime.dart';
+import 'package:provider/provider.dart';
 import 'anasayfa.dart';
-
 
 void main() => runApp(const AnaGiris());
 
@@ -9,13 +10,16 @@ class AnaGiris extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        primarySwatch: Colors.deepOrange,
+    return ChangeNotifierProvider(
+      create: (context) => MyAppState(),
+      child: MaterialApp(
+        theme: ThemeData(
+          primarySwatch: Colors.deepOrange,
+        ),
+        home: const AnaSayfa(),
+        routes: rotalar,
+        debugShowCheckedModeBanner: false,
       ),
-      home: const AnaSayfa(),
-      routes: rotalar,
-      debugShowCheckedModeBanner: false,
     );
   }
 }
