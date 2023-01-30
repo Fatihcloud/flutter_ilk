@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ilk/provider/Yeni_kelime.dart';
 import 'package:provider/provider.dart';
-import 'anasayfa.dart';
+import 'page/anasayfa.dart';
 
 void main() => runApp(const AnaGiris());
 

@@ -26,7 +26,7 @@ class _FavoritePageState extends State<FavoritePage> {
               itemCount: provider.favorites.length,
               itemBuilder: (favorite, index) {
                 return ListTile(
-                  title: Text("${provider.favorites[index]}"),
+                  title: Text(provider.favorites[index].asPascalCase),
                   leading: const Icon(Icons.favorite),
                   trailing: IconButton(
                     icon: const Icon(Icons.delete_outline),
