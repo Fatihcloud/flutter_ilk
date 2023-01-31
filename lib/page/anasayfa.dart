@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_ilk/yanmenu.dart';
@@ -54,6 +52,19 @@ class AnaSayfaRandom extends StatelessWidget {
                 provider.current.asPascalCase,
                 style: const TextStyle(
                   fontSize: 40.0,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+          Card(
+            color: theme.colorScheme.primary,
+            child: Padding(
+              padding: const EdgeInsets.all(11.0),
+              child: Text(
+                provider.current.asPascalCase,
+                style: const TextStyle(
+                  fontSize: 20.0,
                   color: Colors.white,
                 ),
               ),

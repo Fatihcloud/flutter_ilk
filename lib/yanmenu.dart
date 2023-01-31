@@ -8,7 +8,7 @@ class YanMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: Colors.deepPurple[100],
+      backgroundColor: Colors.deepOrange[300],
       width: MediaQuery.of(context).size.width * 0.4,
       child: ListView(
         padding: EdgeInsets.zero,
