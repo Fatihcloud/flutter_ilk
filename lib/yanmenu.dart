@@ -9,7 +9,7 @@ class YanMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       backgroundColor: Colors.deepPurple[100],
-      width: MediaQuery.of(context).size.width * 0.5,
+      width: MediaQuery.of(context).size.width * 0.4,
       child: ListView(
         padding: EdgeInsets.zero,
         children: <Widget>[

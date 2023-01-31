@@ -49,7 +49,7 @@ class AnaSayfaRandom extends StatelessWidget {
           Card(
             color: theme.colorScheme.primary,
             child: Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(11.0),
               child: Text(
                 provider.current.asPascalCase,
                 style: const TextStyle(

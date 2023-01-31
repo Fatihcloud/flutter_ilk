@@ -33,7 +33,8 @@ class _GarbagePageState extends State<GarbagePage> {
                     onPressed: () {
                       setState(() {
                         provider.garbages.removeAt(index);
-                      });
+                      },
+                      );
                     },
                   ),
                 );

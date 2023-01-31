@@ -34,7 +34,8 @@ class _FavoritePageState extends State<FavoritePage> {
                       setState(() {
                         provider.garbages.add(provider.favorites[index]);
                         provider.favorites.removeAt(index);
-                      });
+                      },
+                      );
                     },
                   ),
                 );

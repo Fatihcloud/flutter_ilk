@@ -14,7 +14,7 @@ class AnaGiris extends StatelessWidget {
       create: (context) => MyAppState(),
       child: MaterialApp(
         theme: ThemeData(
-          primarySwatch: Colors.deepOrange,
+          primarySwatch: Colors.deepPurple,
         ),
         home: const AnaSayfa(),
         routes: rotalar,
