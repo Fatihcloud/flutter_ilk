@@ -6,11 +6,13 @@ class MyAppState extends ChangeNotifier {
 
   void getNext() {
     current = WordPair.random();
+    history.add(current);
     notifyListeners();
   }
 
   var favorites = <WordPair>[];
   var garbages = <WordPair>[];
+  var history = <WordPair>[];
 
   void toggleFavorite() {
     if (favorites.contains(current)) {
@@ -23,4 +25,3 @@ class MyAppState extends ChangeNotifier {
     notifyListeners();
   }
 }
-
