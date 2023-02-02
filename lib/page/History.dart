@@ -32,9 +32,19 @@ class _HistoryState extends State<History> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       IconButton(
-                          onPressed: () {}, icon: const Icon(Icons.favorite)),
+                          onPressed: () {
+                            setState(() {
+                              provider.favorites.add(provider.history[index]);
+                            });
+                          },
+                          icon: const Icon(Icons.favorite)),
                       IconButton(
-                          onPressed: () {}, icon: const Icon(Icons.delete)),
+                          onPressed: () {
+                            setState(() {
+                              provider.garbages.add(provider.history[index]);
+                            });
+                          },
+                          icon: const Icon(Icons.delete)),
                     ],
                   ),
                 );
