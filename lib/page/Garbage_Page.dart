@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:flutter_ilk/provider/Yeni_kelime.dart';
 import 'package:provider/provider.dart';

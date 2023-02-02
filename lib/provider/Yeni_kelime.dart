@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 
@@ -17,10 +18,8 @@ class MyAppState extends ChangeNotifier {
   void toggleFavorite() {
     if (favorites.contains(current)) {
       favorites.remove(current);
-      print('baba');
     } else {
       favorites.add(current);
-      print('anne');
     }
     notifyListeners();
   }
