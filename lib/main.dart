@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ilk/page/Giris_oldumu.dart';
 import 'package:flutter_ilk/page/login_page.dart';
 import 'package:flutter_ilk/provider/Yeni_kelime.dart';
 import 'package:provider/provider.dart';
@@ -7,7 +8,6 @@ import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
   await Firebase.initializeApp();
 
   runApp(const AnaGiris());
@@ -24,7 +24,7 @@ class AnaGiris extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.deepPurple,
         ),
-        home: const LoginPage(),
+        home: const GirisOldumu(),
         routes: rotalar,
         debugShowCheckedModeBanner: false,
       ),

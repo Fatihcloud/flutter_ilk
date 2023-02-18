@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ilk/page/History.dart';
 import 'page/FavoritePage.dart';
@@ -55,6 +56,15 @@ class YanMenu extends StatelessWidget {
               },
               label: const Text('History'),
               icon: const Icon(Icons.history),
+            ),
+          ),
+          ListTile(
+            title: ElevatedButton.icon(
+              onPressed: () {
+                FirebaseAuth.instance.signOut();
+              },
+              label: const Text('Sign Out'),
+              icon: const Icon(Icons.exit_to_app),
             ),
           ),
         ],
