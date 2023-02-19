@@ -32,10 +32,11 @@ class _FavoritePageState extends State<FavoritePage> {
                   trailing: IconButton(
                     icon: const Icon(Icons.delete_outline),
                     onPressed: () {
-                      setState(() {
-                        provider.garbages.add(provider.favorites[index]);
-                        provider.favorites.removeAt(index);
-                      },
+                      setState(
+                        () {
+                          provider.garbages.add(provider.favorites[index]);
+                          provider.favorites.removeAt(index);
+                        },
                       );
                     },
                   ),

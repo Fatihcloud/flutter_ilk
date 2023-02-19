@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ilk/page/Garbage_Page.dart';
 import 'package:flutter_ilk/page/History.dart';
 import 'page/FavoritePage.dart';
-import 'page/Garbage_Page.dart';
 
 class YanMenu extends StatelessWidget {
   const YanMenu({super.key});
