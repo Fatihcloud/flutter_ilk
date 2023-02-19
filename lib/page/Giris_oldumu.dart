@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ilk/page/anasayfa.dart';
-import 'package:flutter_ilk/page/login_page.dart';
+import 'package:flutter_ilk/page/auth_page.dart';
 
 class GirisOldumu extends StatelessWidget {
   const GirisOldumu({super.key});
@@ -15,7 +15,7 @@ class GirisOldumu extends StatelessWidget {
           if (snapshot.hasData) {
             return AnaSayfa();
           } else {
-            return LoginPage();
+            return AuthPage();
           }
         },
       ),
