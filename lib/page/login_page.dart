@@ -87,6 +87,7 @@ class _LoginPageState extends State<LoginPage> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: TextField(
+                    obscureText: true,
                     controller: _passwordController,
                     decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
@@ -101,6 +102,17 @@ class _LoginPageState extends State<LoginPage> {
                       fillColor: Colors.grey[200],
                       filled: true,
                     ),
+                  ),
+                ),
+                const SizedBox(height: 10),
+
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text('Fargot Password?'),
+                    ],
                   ),
                 ),
                 const SizedBox(height: 10),
