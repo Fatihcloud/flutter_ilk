@@ -2,6 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'Fargot_pw_page.dart';
+
 class LoginPage extends StatefulWidget {
   final VoidCallback showRegisterPage;
   const LoginPage({super.key, required this.showRegisterPage});
@@ -110,8 +112,27 @@ class _LoginPageState extends State<LoginPage> {
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
+                    // ignore: prefer_const_literals_to_create_immutables
                     children: [
-                      Text('Fargot Password?'),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return FargotPasswordPage();
+                              },
+                            ),
+                          );
+                        },
+                        child: const Text(
+                          'Fargot Password?',
+                          style: TextStyle(
+                            color: Colors.blue,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),
