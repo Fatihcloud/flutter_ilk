@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class FargotPasswordPage extends StatefulWidget {
@@ -22,15 +21,17 @@ class _FargotPasswordPageState extends State<FargotPasswordPage> {
     try {
       await FirebaseAuth.instance
           .sendPasswordResetEmail(email: _emailController.text.trim());
+      // ignore: use_build_context_synchronously
       showDialog(
         context: context,
         builder: (context) {
-          return AlertDialog(
+          return const AlertDialog(
             content: Text("Password reset link send! Check your email"),
           );
         },
       );
     } on FirebaseAuthException catch (e) {
+      // ignore: avoid_print
       print(e);
       showDialog(
         context: context,
@@ -53,8 +54,8 @@ class _FargotPasswordPageState extends State<FargotPasswordPage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25.0),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 25.0),
             child: Text(
               'Enter Your Email and will send you a password reset link',
               textAlign: TextAlign.center,
@@ -68,11 +69,11 @@ class _FargotPasswordPageState extends State<FargotPasswordPage> {
               controller: _emailController,
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.white),
+                  borderSide: const BorderSide(color: Colors.white),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.deepPurple),
+                  borderSide: const BorderSide(color: Colors.deepPurple),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 hintText: 'Email',
@@ -84,8 +85,8 @@ class _FargotPasswordPageState extends State<FargotPasswordPage> {
           const SizedBox(height: 10),
           MaterialButton(
             onPressed: passwordReset,
-            child: Text("Reset Password"),
             color: Colors.deepPurple[200],
+            child: const Text("Reset Password"),
           ),
         ],
       ),

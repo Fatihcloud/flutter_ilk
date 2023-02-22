@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_ilk/yanmenu.dart';
+import 'package:flutter_ilk/yan_menu.dart';
 import '../provider/Yeni_kelime.dart';
 
 class AnaSayfa extends StatefulWidget {

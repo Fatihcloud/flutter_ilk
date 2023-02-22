@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_ilk/page/login_page.dart';
+import 'package:flutter_ilk/page_login/login_page.dart';
 
-import 'Register_page.dart';
+import 'register_page.dart';
 
 class AuthPage extends StatefulWidget {
   const AuthPage({super.key});
