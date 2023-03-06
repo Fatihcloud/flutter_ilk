@@ -1,7 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../components/square_tile.dart';
 import '../page/fargot_pw_page.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import '../services/auth_service.dart';
 
 class LoginPage extends StatefulWidget {
   final VoidCallback showRegisterPage;
@@ -15,12 +18,23 @@ class _LoginPageState extends State<LoginPage> {
   //TEXT controllers
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
+  final GoogleSignIn _googleSignIn = GoogleSignIn();
 
   Future signIn() async {
+    // loding circle
+    showDialog(
+      context: context,
+      builder: (context) {
+        return const Center(child: CircularProgressIndicator());
+      },
+    );
     await FirebaseAuth.instance.signInWithEmailAndPassword(
       email: _emailController.text.trim(),
       password: _passwordController.text.trim(),
     );
+    //pop the loading cirrle
+    // ignore: use_build_context_synchronously
+    Navigator.of(context).pop();
   }
 
   @override
@@ -163,6 +177,58 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 const SizedBox(height: 25),
 
+                // or continue with
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Divider(
+                          thickness: 0.5,
+                          color: Colors.grey[400],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                        child: Text(
+                          "Or continue with",
+                          style: TextStyle(color: Colors.grey[700]),
+                        ),
+                      ),
+                      Expanded(
+                        child: Divider(
+                          thickness: 0.5,
+                          color: Colors.grey[400],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 25),
+
+                //google + apple sing in button
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    // google button
+                    SquareTile(
+                      onTap: () => AuthService().signInWithGoggle(),
+                      imagePath: 'lib/images/google.png',
+                      ),
+
+                    SizedBox(
+                      width: 10,
+                    ),
+
+                    //apple button
+                    SquareTile(
+                      onTap: () {},
+                      imagePath: 'lib/images/apple.png',
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 25),
+                
                 //not a member? register now!
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
