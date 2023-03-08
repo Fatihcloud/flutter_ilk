@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ilk/provider/Yeni_kelime.dart';
+import 'package:flutter_ilk/provider/yeni_kelime.dart';
 import 'package:provider/provider.dart';
 
 class GarbagePage extends StatefulWidget {
@@ -31,9 +31,10 @@ class _GarbagePageState extends State<GarbagePage> {
                   trailing: IconButton(
                     icon: const Icon(Icons.delete_outline),
                     onPressed: () {
-                      setState(() {
-                        provider.garbages.removeAt(index);
-                      },
+                      setState(
+                        () {
+                          provider.garbages.removeAt(index);
+                        },
                       );
                     },
                   ),

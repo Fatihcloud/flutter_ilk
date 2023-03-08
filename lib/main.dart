@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ilk/Page_login/giris_oldumu.dart';
-import 'package:flutter_ilk/provider/Yeni_kelime.dart';
+import 'package:flutter_ilk/page_login/giris_oldumu.dart';
+import 'package:flutter_ilk/provider/yeni_kelime.dart';
 import 'package:provider/provider.dart';
 import 'page/anasayfa.dart';
 import 'package:firebase_core/firebase_core.dart';

@@ -2,6 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../components/square_tile.dart';
+import '../services/auth_service.dart';
 
 class RegisterPage extends StatefulWidget {
   final VoidCallback showLoginPage;
@@ -79,7 +81,7 @@ class _RegisterPageState extends State<RegisterPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               // ignore: prefer_const_literals_to_create_immutables
               children: [
-                const SizedBox(height: 50),
+                const SizedBox(height: 25),
                 // Hello Again!
                 Text(
                   'Hello There!',
@@ -94,7 +96,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     fontSize: 20,
                   ),
                 ),
-                const SizedBox(height: 50),
+                const SizedBox(height: 30),
 
                 // First name textdield
                 Padding(
@@ -253,6 +255,58 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                     ),
                   ),
+                ),
+                const SizedBox(height: 25),
+
+                // or continue with
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Divider(
+                          thickness: 0.5,
+                          color: Colors.grey[400],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                        child: Text(
+                          "Or continue with",
+                          style: TextStyle(color: Colors.grey[700]),
+                        ),
+                      ),
+                      Expanded(
+                        child: Divider(
+                          thickness: 0.5,
+                          color: Colors.grey[400],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 25),
+
+                //google + apple sing in button
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    // google button
+                    SquareTile(
+                      onTap: () => AuthService().signInWithGoggle(),
+                      imagePath: 'lib/images/google.png',
+                    ),
+
+                    const SizedBox(
+                      width: 10,
+                    ),
+
+                    //apple button
+                    SquareTile(
+                      onTap: () {},
+                      imagePath: 'lib/images/apple.png',
+                    ),
+                  ],
                 ),
                 const SizedBox(height: 25),
 

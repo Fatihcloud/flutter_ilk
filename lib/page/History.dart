@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_ilk/provider/Yeni_kelime.dart';
+import 'package:flutter_ilk/provider/yeni_kelime.dart';
 
 class History extends StatefulWidget {
   const History({super.key});

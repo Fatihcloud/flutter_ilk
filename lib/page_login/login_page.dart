@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../components/square_tile.dart';
 import '../page/fargot_pw_page.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 import '../services/auth_service.dart';
 
 class LoginPage extends StatefulWidget {
@@ -18,7 +17,6 @@ class _LoginPageState extends State<LoginPage> {
   //TEXT controllers
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
-  final GoogleSignIn _googleSignIn = GoogleSignIn();
 
   Future signIn() async {
     // loding circle
@@ -216,7 +214,7 @@ class _LoginPageState extends State<LoginPage> {
                       imagePath: 'lib/images/google.png',
                       ),
 
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
 
